@@ -1,0 +1,273 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "announce",
+      "guid": "f452f654-86d3-41aa-bb4a-d79dbef39be3",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "da5caba7-f01f-4476-8c6f-cefbf52742b7"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 177,
+      "y": 171
+    },
+    {
+      "type": "response",
+      "name": "check for manager",
+      "guid": "da5caba7-f01f-4476-8c6f-cefbf52742b7",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "2e01db8d-053f-4371-bad8-df21692728a7"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f452f654-86d3-41aa-bb4a-d79dbef39be3"
+        }
+      ],
+      "x": 568,
+      "y": 196,
+      "rtype": "User Action",
+      "rsubtype": "Check If User Has Role",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "1019559088671170632"
+      ],
+      "formnames": [
+        "user",
+        "role"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "send announcement",
+      "guid": "674d1cfa-1a39-406e-813a-b677bfcf5374",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2e01db8d-053f-4371-bad8-df21692728a7"
+        }
+      ],
+      "x": 897,
+      "y": 208,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "1019559132887515157",
+        "FF0000",
+        "Announcement",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.announcement}",
+        "",
+        "",
+        "announcement sent on the",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "store announcement",
+      "guid": "2e01db8d-053f-4371-bad8-df21692728a7",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "announcement",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "674d1cfa-1a39-406e-813a-b677bfcf5374"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "da5caba7-f01f-4476-8c6f-cefbf52742b7"
+        }
+      ],
+      "x": 725,
+      "y": 194,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "announcement",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "suggest",
+      "guid": "315d8a69-9123-444a-86b0-a337b3809558",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "457e8802-071f-482e-a7a6-8e6f33ad53a2"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 181,
+      "y": 270
+    },
+    {
+      "type": "response",
+      "name": "store support",
+      "guid": "457e8802-071f-482e-a7a6-8e6f33ad53a2",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "suggest",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ebe1a8d3-0ee8-449a-8b4d-c8aa6b36183f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "315d8a69-9123-444a-86b0-a337b3809558"
+        }
+      ],
+      "x": 558,
+      "y": 426,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "suggest",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "send suggestion",
+      "guid": "ebe1a8d3-0ee8-449a-8b4d-c8aa6b36183f",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "suggestion",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "457e8802-071f-482e-a7a6-8e6f33ad53a2"
+        }
+      ],
+      "x": 860,
+      "y": 436,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "1019573051056201818",
+        "DDFF00",
+        "Suggestion",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.suggest}",
+        "",
+        "",
+        "suggestion sent on  the",
+        "BOOL_TRUE@@",
+        "suggestion",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    }
+  ]
+}

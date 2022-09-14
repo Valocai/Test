@@ -1,0 +1,37 @@
+[{
+  "1006540576172286033": "1",
+  "1019557989235052634": "2"
+},{
+  "transcriptchannel": "3",
+  "SRole": "4"
+},{},{
+  "type": "5",
+  "guild": "6",
+  "guildId": "6",
+  "parentId": null,
+  "permissionOverwrites": "7",
+  "messages": "8",
+  "threads": "9",
+  "nsfw": false,
+  "id": "10",
+  "name": "11",
+  "rawPosition": 44,
+  "topic": null,
+  "lastMessageId": null,
+  "rateLimitPerUser": 0,
+  "createdTimestamp": 1663005360443
+},{
+  "guild": "6",
+  "icon": null,
+  "unicodeEmoji": null,
+  "id": "12",
+  "name": "13",
+  "color": 16777215,
+  "hoist": true,
+  "rawPosition": 1,
+  "permissions": "14",
+  "managed": false,
+  "mentionable": true,
+  "tags": null,
+  "createdTimestamp": 1663005360665
+},"GUILD_TEXT","1006540576172286033",[],[],[],"1018943076326199377","transcript","1018943077257314344","Support","927746490880"]

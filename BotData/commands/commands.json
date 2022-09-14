@@ -1,0 +1,85 @@
+{
+  "command": [
+    {
+      "name": "announce",
+      "actions": [
+        {
+          "name": "check for manager",
+          "category": "User Action",
+          "type": "Check If User Has Role",
+          "trueActions": [
+            {
+              "name": "store announcement",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "announcement",
+              "vartype": "Text",
+              "savevartype": "temp",
+              "param": "0"
+            },
+            {
+              "name": "send announcement",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "1019559132887515157",
+              "color": "FF0000",
+              "title": "Announcement",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "${tempVars.announcement}",
+              "thumbnail": "",
+              "image": "",
+              "footer": "announcement sent on the",
+              "timestamp": "BOOL_TRUE@@",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "role": "1019559088671170632"
+        }
+      ]
+    },
+    {
+      "name": "suggest",
+      "actions": [
+        {
+          "name": "store support",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "messageActionRows": [],
+          "varname": "suggest",
+          "vartype": "Text",
+          "savevartype": "temp",
+          "param": "0"
+        },
+        {
+          "name": "send suggestion",
+          "category": "Message",
+          "type": "Send Embed",
+          "messageActionRows": [],
+          "channelname": "1019573051056201818",
+          "color": "DDFF00",
+          "title": "Suggestion",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "${tempVars.suggest}",
+          "thumbnail": "",
+          "image": "",
+          "footer": "suggestion sent on  the",
+          "timestamp": "BOOL_TRUE@@",
+          "savetovariable": "suggestion",
+          "savetovariabletype": "temp"
+        }
+      ]
+    }
+  ]
+}
